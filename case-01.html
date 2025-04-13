@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 01</title>
+    <style>
+        section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+<section id="queue">
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
+    <div>E</div>
+    <div>F</div>
+</section>
+
+<script>
+    let queue = ['A', 'B', 'C', 'D', 'E' , 'F'];
+
+    const updateLetters = () => {
+       let lastLetter =  queue.pop();               //last letter eka ain krnwa
+       queue.unshift(lastLetter);                   // e last letter eka array eke mulata danawa
+
+        console.log(queue);     //print the output in console
+
+       /* for (let i = 0; i < queue.length ; i++) {
+            document.getElementsByTagName('div')[i].innerText = queue[i];
+        }*/
+
+        queue.map((item , index) => {
+            document.getElementsByTagName('div')[index].innerText = item;
+        });
+
+    }
+    setInterval(updateLetters,3000);
+</script>
+</body>
+</html>
